@@ -75,7 +75,7 @@ export function Profile() {
 
                         <input 
                             id='avatar'
-                            type="file" 
+                            type="file"
                             onChange={handleChangeAvatar}
                         />
                     </label>

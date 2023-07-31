@@ -7,7 +7,12 @@ export const Conteiner = styled.div`
 
     display: flex;
     align-items: stretch;
-    
+    position: relative;
+
+    div:nth-child(3){
+        position: absolute;
+    }
+
 `;
 
 export const Form = styled.form`
@@ -39,6 +44,7 @@ export const Form = styled.form`
         margin-top: 124px;
         color: ${({theme}) => theme.COLORS.ORANGE};
     }
+
 `;
 
 export const Background = styled.div`
