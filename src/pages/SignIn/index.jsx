@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import { Conteiner, Form, Background } from "./styles";
 import { FiMail, FiLock } from "react-icons/fi";
@@ -8,21 +8,50 @@ import { useAuth } from '../../hooks/auth';
 
 import { Input } from '../../components/Input';
 import { Button } from '../../components/Button/index';
+import { Loading } from "../../components/Loading";
 
 export function SignIn() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
+    /* method to check if the server is online */
+    const [estaSincronizado, setEstaSincronizado] = useState(false);
+
+    useEffect(() => {
+        const verificarSincronizacao = async () => {
+            try {
+                
+                const response = await fetch('http://localhost:3333/resp');
+                const data = await response.json();
+        
+                const statusDeSincronizacao = data; 
+                setEstaSincronizado(statusDeSincronizacao);
+
+            } catch (error) {
+                console.error('Erro ao verificar sincronização:', error);
+                const interval = setInterval(verificarSincronizacao, 10000);
+                return () => clearInterval(interval);
+            }
+        };
+
+        verificarSincronizacao();
+    }, []);
+
+    /* logging user */
     const { signIn } = useAuth();
 
     function handleSignIn() {
+
+        if(!email || !password){
+            return alert("Digite email e senha para continuar.")
+        }
+
         signIn({ email, password });
     }
 
     return (
         <Conteiner>
             <Form>
-
                 <h1>Notpads</h1>
                 <p>Aplicação para salvar e gerenciar seus links úteis.</p>
 
@@ -49,8 +78,12 @@ export function SignIn() {
                 </Link>
 
             </Form>
-                
-            <Background />
+
+            <Background /> 
+            {
+                estaSincronizado == false &&
+                <Loading />
+            }
         </Conteiner>
     );
 }
