@@ -21,7 +21,7 @@ export function SignIn() {
         const verificarSincronizacao = async () => {
             try {
                 
-                const response = await fetch('http://localhost:3333/resp');
+                const response = await fetch('https://notepad-backend.onrender.com/resp');
                 const data = await response.json();
         
                 const statusDeSincronizacao = data; 
