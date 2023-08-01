@@ -13,12 +13,16 @@ export const Conteiner = styled.div`
     > main {
         grid-area: content;
         overflow-y: auto;
-    }
+    };
 
     .tags {
         display: flex;
         justify-content: space-between;
         flex-wrap: wrap;
+    };
+
+    @media (max-width: 430px) {
+        padding: 0 3rem;
     }
 `;
 
@@ -37,5 +41,5 @@ export const Form = styled.form`
             font-size: 20px;
             color: ${({theme}) => theme.COLORS.GRAY_100};
         }
-    }
+    };
 `;

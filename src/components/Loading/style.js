@@ -10,21 +10,21 @@ export const Conteiner = styled.div`
     justify-content: center;
     background-color: black;
     opacity: 0.8;
-    gap: 100px;
+    gap: 10rem;
     
     p{
-        font-size: 38px;
+        font-size: 3.8rem;
         font-weight: 700;
         text-align: center;
     }
     
     .c-loader {
         animation: is-rotating 1s infinite;
-        border: 25px solid #e5e5e5;
+        border: 2.5rem solid #e5e5e5;
         border-radius: 50%;
         border-top-color: ${({theme}) => theme.COLORS.ORANGE};
-        height: 200px;
-        width: 200px;
+        height: 20rem;
+        width: 20rem;
     }
 
     @keyframes is-rotating {
