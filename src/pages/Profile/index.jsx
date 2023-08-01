@@ -58,8 +58,9 @@ export function Profile() {
         <Conteiner>
             <header>
                 {/* houve modificação no button consulte ajuste 001 na pesquisa */}
-                <button type='button' onClick={handleBack} >
-                    <FiArrowLeft size={24}/>
+                <button type='button' onClick={handleBack} className='btnBack'>
+                    <FiArrowLeft size={24} />
+                    <p>voltar</p>
                 </button>
             </header>
 

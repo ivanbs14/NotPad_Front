@@ -8,14 +8,14 @@ export const Conteiner = styled.div`
     background-color: ${({theme}) => theme.COLORS.BACKGROUND_900};
     color: ${({theme}) => theme.COLORS.GRAY_300};
 
-    margin-bottom: 8px;
-    border-radius: 10px;
+    margin-bottom: 0.8rem;
+    border-radius: 1rem;
 
     > input {
-        height: 56px;
+        height: 5.6rem;
         width: 100%;
 
-        padding: 12px;
+        padding: 1.2rem;
 
         background: transparent;
         color: ${({theme}) => theme.COLORS.WHITE};
@@ -29,7 +29,7 @@ export const Conteiner = styled.div`
 
 
     > svg {
-            margin-left: 16px;
+            margin-left: 1.6rem;
         }
 `;
 

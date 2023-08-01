@@ -14,6 +14,10 @@ export const Conteiner = styled.div`
         grid-area: content;
         overflow-y: scroll;
         padding: 64px 0;
+    };
+
+    @media (max-width: 430px) {
+        padding: 0 3rem;
     }
 `;
 
